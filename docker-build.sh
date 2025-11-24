@@ -11,11 +11,12 @@ echo ""
 # Check if compiler is installed
 if [ ! -d "$COMPILER_DIR/LINUX/bin" ]; then
     echo "Installing Sega Saturn compiler toolchain..."
+    echo "This will take 15-20 minutes on first build..."
     cd $COMPILER_DIR
     ./INSTALL_LINUX.sh
 fi
 
-# Navigate to project directory
+# Navigate to project directory (the mounted volume will be at /workspace)
 cd /workspace
 
 # Clean previous builds
@@ -25,6 +26,7 @@ make clean 2>/dev/null || true
 # Build the project
 echo "Building PowerRings..."
 export NCPU=$(nproc)
+echo "Using $NCPU CPU cores..."
 make -j${NCPU} all
 
 # Build SD card image components
