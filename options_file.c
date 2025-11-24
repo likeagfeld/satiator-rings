@@ -51,7 +51,7 @@ void loadOptions(bool firstInit)
     char * ini = "options.ini";
     if(strcmp("/", currentDirectory))
         s_chdir("/");
-    s_chdir("satiator-rings");
+    s_chdir("satiator-powerrings");
 
     // stat the file
     s_stat_t *st = (s_stat_t*)statbuf;
@@ -127,7 +127,7 @@ bool saveOptions()
     char * ini = "options.ini";
     if(strcmp("/", currentDirectory))
         s_chdir("/");
-    s_chdir("satiator-rings");
+    s_chdir("satiator-powerrings");
 
     // stat the file
     s_stat_t *st = (s_stat_t*)statbuf;

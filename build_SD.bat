@@ -10,8 +10,8 @@ echo .
 echo . 
 SET COMPILER_DIR=..\..\..\Compiler
 SET PATH=%COMPILER_DIR%\WINDOWS\Other Utilities;%COMPILER_DIR%\WINDOWS\bin;%PATH%
-cd satiator-rings-emulate
-rm -rf "SD\satiator-rings\emulate.bin"
+cd satiator-powerrings-emulate
+rm -rf "SD\satiator-powerrings\emulate.bin"
 copy libiapetus.a "%COMPILER_DIR%\WINDOWS\sh-elf\lib\libiapetus.a"
 rm makefile
 copy makefile_windows makefile
@@ -25,7 +25,7 @@ move emulate.elf out/emulate.elf
 rm -rf makefile
 copy makefile_linux makefile
 cd ..
-copy "satiator-rings-emulate\out\emulate.bin" "SD\satiator-rings\emulate.bin"
+copy "satiator-powerrings-emulate\out\emulate.bin" "SD\satiator-powerrings\emulate.bin"
 
 echo .
 echo .
@@ -37,12 +37,12 @@ echo .
 echo .
 echo .
 
-rmdir   "SD\satiator-rings\ar" /s /q
-mkdir "SD\satiator-rings\ar"
-cd satiator-rings-arpatch
+rmdir   "SD\satiator-powerrings\ar" /s /q
+mkdir "SD\satiator-powerrings\ar"
+cd satiator-powerrings-arpatch
 START /WAIT build
 cd..
-move satiator-rings-arpatch\release\*.bin SD\satiator-rings\ar\
+move satiator-powerrings-arpatch\release\*.bin SD\satiator-powerrings\ar\
 
 echo .
 echo .

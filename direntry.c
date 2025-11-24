@@ -83,7 +83,7 @@ void loadFileList(char * directory, int (*filter)(dirEntry *entry))
         // UNIX hidden files, except .. when present
         if (st->name[0] == '.' && strcmp(st->name, ".."))
             continue;
-        if(!strncmp(st->name, "satiator-rings", 14) && !strcmp(currentDirectory, "/"))
+        if(!strncmp(st->name, "satiator-powerrings", 19) && !strcmp(currentDirectory, "/"))
             continue;
         if(!strncmp(st->name, "satiator-saves", 14) && !strcmp(currentDirectory, "/"))
             continue;

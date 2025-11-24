@@ -35,19 +35,22 @@ void defaultThemeColour(enum themePalEntryTypes type)
     switch(type)
     {
         case PAL_COL_FONT:
-            loadedTheme.colours[type].r = 255;
-            loadedTheme.colours[type].g = 0;
-            loadedTheme.colours[type].b = 0;
+            // Sega Saturn Blue
+            loadedTheme.colours[type].r = 0;
+            loadedTheme.colours[type].g = 51;
+            loadedTheme.colours[type].b = 153;
             break;
         case PAL_COL_BG:
-            loadedTheme.colours[type].r = 255;
-            loadedTheme.colours[type].g = 0;
-            loadedTheme.colours[type].b = 0;
+            // Sega Saturn Deep Blue
+            loadedTheme.colours[type].r = 0;
+            loadedTheme.colours[type].g = 51;
+            loadedTheme.colours[type].b = 153;
             break;
         case PAL_COL_SELECTOR:
-            loadedTheme.colours[type].r = 251;
-            loadedTheme.colours[type].g = 221;
-            loadedTheme.colours[type].b = 221;
+            // Light Blue/Cyan for selection
+            loadedTheme.colours[type].r = 100;
+            loadedTheme.colours[type].g = 180;
+            loadedTheme.colours[type].b = 255;
             break;
         case PAL_COL_WHITE:
             loadedTheme.colours[type].r = 255;
@@ -55,9 +58,10 @@ void defaultThemeColour(enum themePalEntryTypes type)
             loadedTheme.colours[type].b = 255;
             break;
         case PAL_COL_BOX_BG:
-            loadedTheme.colours[type].r = 255;
-            loadedTheme.colours[type].g = 255;
-            loadedTheme.colours[type].b = 255;
+            // Silver/Grey boxes like Saturn console
+            loadedTheme.colours[type].r = 220;
+            loadedTheme.colours[type].g = 220;
+            loadedTheme.colours[type].b = 235;
             break;
         case PAL_COL_COUNT: // remove warning in compiler
             break;
@@ -72,17 +76,18 @@ void initTheme()
 jo_palette          *theme_palette_handling(void)
 {
     jo_create_palette(&main_palette);
-    main_palette.data[2 + PAL_COL_FONT] = JO_COLOR_Red;
-    main_palette.data[2 + PAL_COL_BG] = JO_COLOR_Red;
-    main_palette.data[2 + PAL_COL_BOX_BG] = JO_COLOR_White;
+    // Sega Saturn themed colors - iconic blue and white
+    main_palette.data[2 + PAL_COL_FONT] = JO_COLOR_RGB(0, 51, 153);
+    main_palette.data[2 + PAL_COL_BG] = JO_COLOR_RGB(0, 51, 153);
+    main_palette.data[2 + PAL_COL_BOX_BG] = JO_COLOR_RGB(220, 220, 235);
     main_palette.data[2 + PAL_COL_WHITE] = JO_COLOR_White;
-    main_palette.data[2 + PAL_COL_SELECTOR] = JO_COLOR_RGB(251, 221, 221);
+    main_palette.data[2 + PAL_COL_SELECTOR] = JO_COLOR_RGB(100, 180, 255);
     return (&main_palette);
 }
 
 bool loadThemeFile(char * theme)
 {
-    s_chdir("/satiator-rings/themes");
+    s_chdir("/satiator-powerrings/themes");
     s_chdir(theme);
     char *fn = "theme.ini";
     s_stat_t *st = (s_stat_t*)statbuf;

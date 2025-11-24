@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  powerrings-build:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: powerrings-builder:latest
+    container_name: powerrings-build-env
+    volumes:
+      - .:/workspace
+      - build-cache:/opt/toolchains
+    working_dir: /workspace
+    command: /usr/local/bin/build.sh
+    environment:
+      - COMPILER_DIR=/opt/toolchains/saturn/Compiler
+      - JO_ENGINE_SRC_DIR=/opt/toolchains/saturn/jo_engine
+
+volumes:
+  build-cache:
+    driver: local

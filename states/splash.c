@@ -140,9 +140,9 @@ void logic_splash()
         case ROUTINE_STATE_INITIALIZE:
             create_sprite(load_gui_texture(PAL_COL_WHITE), 160, 120, 3, 50.0, 50.0, 0);
             routine_scene = 0;
-            logosprites[0] = create_sprite(load_sprite_texture_satiator("/satiator-rings/gfx", "S.TGA"), 80, 20, 2, 1.0, 1.0, 0);
-            logosprites[1] = create_sprite(load_sprite_texture_satiator("/satiator-rings/gfx", "S1.TGA"), sprites[logosprites[0]].x, sprites[logosprites[0]].y + getSpriteHeight(logosprites[0]) + 15, 1, 1.0, 1.0, 0);
-            logosprites[2] = create_sprite(load_sprite_texture_satiator("/satiator-rings/gfx", "S2.TGA"), sprites[logosprites[0]].x, sprites[logosprites[1]].y + getSpriteHeight(logosprites[1]) + 5, 1, 1.0, 1.0, 0);
+            logosprites[0] = create_sprite(load_sprite_texture_satiator("/satiator-powerrings/gfx", "S.TGA"), 80, 20, 2, 1.0, 1.0, 0);
+            logosprites[1] = create_sprite(load_sprite_texture_satiator("/satiator-powerrings/gfx", "S1.TGA"), sprites[logosprites[0]].x, sprites[logosprites[0]].y + getSpriteHeight(logosprites[0]) + 15, 1, 1.0, 1.0, 0);
+            logosprites[2] = create_sprite(load_sprite_texture_satiator("/satiator-powerrings/gfx", "S2.TGA"), sprites[logosprites[0]].x, sprites[logosprites[1]].y + getSpriteHeight(logosprites[1]) + 5, 1, 1.0, 1.0, 0);
 
             loadSfx(SFX_INTRO);
             loadSfx(SFX_THUD);

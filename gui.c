@@ -22,12 +22,12 @@ void createGuiBoxes(char * headerTexture, bool withSelectionSprite)
 {
     create_sprite(load_gui_texture(PAL_COL_BG), 160, 120, 3, 50.0, 50.0, 0);
     char * dir = jo_malloc(512);
-    sprintf(dir, "/satiator-rings/themes/%s", loadedThemeName);
+    sprintf(dir, "/satiator-powerrings/themes/%s", loadedThemeName);
 
     boxTexture = load_gui_texture(PAL_COL_BOX_BG);
     boxCornerTexture = load_sprite_texture_satiator(dir, "CORNER.TGA");
     create_sprite(load_sprite_texture_satiator(dir, headerTexture), 0, 4, 1, 1, 1, 0);
-    create_sprite(load_sprite_texture_satiator(dir, "RINGS.TGA"), 192, 4, 1, 1, 1, 0);
+    create_sprite(load_sprite_texture_satiator(dir, "POWERRINGS.TGA"), 192, 4, 1, 1, 1, 0);
     
     // top text strip
     create_sprite(boxTexture, 156, 24, 0, 38.9, 1.35, 0);

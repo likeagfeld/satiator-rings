@@ -52,7 +52,7 @@ void logic_standard(enum prog_state_types * exit_state)
                     displayStatus("Could not load %s", dirEntries[selectedDirEntry].name);
 
                 // change back to the theme directory
-                s_chdir("/satiator-rings/themes");
+                s_chdir("/satiator-powerrings/themes");
                 theme_list_state = ROUTINE_STATE_END;
                 *exit_state = PROG_STATE_THEME_RELOAD;
             }
@@ -76,7 +76,7 @@ void logic_themelist()
             createGuiBoxes("THEME.TGA", true);
             routine_scene = 0;
             triggersHeld = false;
-            s_chdir("/satiator-rings/themes");
+            s_chdir("/satiator-powerrings/themes");
             loadFileList(".", themeFileFilter);
 
             setMaxListLength(GAME_LIST_MAX_ITEM_LEN);

@@ -50,7 +50,7 @@ void initSatiator()
         {
             satiatorState = SATIATOR_STATE_WORKING;
             s_chdir("/"); 
-            satiatorCreateDirectory("/satiator-rings");   
+            satiatorCreateDirectory("/satiator-powerrings");   
             satiatorCreateDirectory(SAVE_FOLDERNAME);     
         }
     } else
@@ -146,7 +146,7 @@ int satiatorPrepareOriginalBootCode()
     if(strcmp("/", currentDirectory))
         s_chdir("/");
 
-    s_chdir("satiator-rings");
+    s_chdir("satiator-powerrings");
     s_stat_t *st = (s_stat_t*)statbuf;
     int fr = s_stat("emulate.bin", st, sizeof(statbuf)-1);
     if (fr < 0)

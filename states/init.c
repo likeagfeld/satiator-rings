@@ -83,7 +83,7 @@ void logic_init()
             initOptions();
             initSatiator();
             initSaves(); // load the per game slot from the save data instead if it exists
-            load_font_satiator("/satiator-rings/gfx", "FONT.TGA");
+            load_font_satiator("/satiator-powerrings/gfx", "FONT.TGA");
             routine_scene = 0;
             init_state = ROUTINE_STATE_RUN;                       
             exit_state = PROG_STATE_SPLASH;

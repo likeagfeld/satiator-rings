@@ -97,31 +97,31 @@ void loadSfx(enum sfxType type)
     switch(type)
     {
         case SFX_SELECT:
-            load_pcm_satiator("/satiator-rings/sfx", "SELECT.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "SELECT.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_MOVE:
-            load_pcm_satiator("/satiator-rings/sfx", "MOVE.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "MOVE.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_INTRO:
-            load_pcm_satiator("/satiator-rings/sfx", "INTRO.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "INTRO.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_THUD:
-            load_pcm_satiator("/satiator-rings/sfx", "THUD.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "THUD.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_SANSHIRO:
-            load_pcm_satiator("/satiator-rings/sfx", "SANSH.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "SANSH.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_SLIDE:
-            load_pcm_satiator("/satiator-rings/sfx", "SLIDE.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "SLIDE.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_CHANGE:
-            load_pcm_satiator("/satiator-rings/sfx", "CHANGE.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "CHANGE.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_BACK:
-            load_pcm_satiator("/satiator-rings/sfx", "BACK.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "BACK.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case SFX_OPTION:
-            load_pcm_satiator("/satiator-rings/sfx", "OPTION.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
+            load_pcm_satiator("/satiator-powerrings/sfx", "OPTION.PCM", JoSoundMono8Bit, &sfx[sfxId].sfx);
             break;
         case MAX_SFX:
             break;

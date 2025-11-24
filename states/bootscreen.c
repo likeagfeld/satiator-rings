@@ -53,9 +53,9 @@ void logic_bootscreen()
                     // load the game boxart from the current directory
                     int tex = load_sprite_texture_satiator(JO_NULL, "BOX.TGA");
                     if(tex < 0)
-                        tex = load_sprite_texture_satiator("/satiator-rings/gfx", "SBOX.TGA"); // no boxart found so using default
+                        tex = load_sprite_texture_satiator("/satiator-powerrings/gfx", "SBOX.TGA"); // no boxart found so using default
                     int boxSprite = create_sprite(tex, 160 - (getTextureWidth(tex) / 2), 120 - getTextureHeight(tex), 1, 1, 1, 0);
-                    strcpy(bootname, "/satiator-rings/themes/");
+                    strcpy(bootname, "/satiator-powerrings/themes/");
                     strcat(bootname, loadedThemeName);
                     int shadowSprite = create_sprite(load_sprite_texture_satiator(bootname, "SHDW.TGA"), 0, sprites[boxSprite].y + getTextureHeight(tex) + 5 , 1, 1, 1, 0);
                     
@@ -75,9 +75,9 @@ void logic_bootscreen()
                     slSynch();
                     main_palette.data[2] = JO_COLOR_Red;
                     centerText(20, "Loading");
-                    logosprites[0] = create_sprite(load_sprite_texture_satiator("/satiator-rings/gfx", "S.TGA"), 80, 20, 2, 1.0, 1.0, 0);
-                    logosprites[1] = create_sprite(load_sprite_texture_satiator("/satiator-rings/gfx", "S1.TGA"), sprites[logosprites[0]].x, sprites[logosprites[0]].y + getSpriteHeight(logosprites[0]) + 15, 1, 1.0, 1.0, 0);
-                    logosprites[2] = create_sprite(load_sprite_texture_satiator("/satiator-rings/gfx", "S2.TGA"), sprites[logosprites[0]].x, sprites[logosprites[1]].y + getSpriteHeight(logosprites[1]) + 5, 1, 1.0, 1.0, 0);
+                    logosprites[0] = create_sprite(load_sprite_texture_satiator("/satiator-powerrings/gfx", "S.TGA"), 80, 20, 2, 1.0, 1.0, 0);
+                    logosprites[1] = create_sprite(load_sprite_texture_satiator("/satiator-powerrings/gfx", "S1.TGA"), sprites[logosprites[0]].x, sprites[logosprites[0]].y + getSpriteHeight(logosprites[0]) + 15, 1, 1.0, 1.0, 0);
+                    logosprites[2] = create_sprite(load_sprite_texture_satiator("/satiator-powerrings/gfx", "S2.TGA"), sprites[logosprites[0]].x, sprites[logosprites[1]].y + getSpriteHeight(logosprites[1]) + 5, 1, 1.0, 1.0, 0);
                 }
             }
             bootscreen_state = ROUTINE_STATE_RUN;

@@ -10,7 +10,7 @@
 
 bool loadIniListFirstLine(char * fn, char * destbuf)
 {
-    s_chdir("/satiator-rings");
+    s_chdir("/satiator-powerrings");
     truncatedList = false;
     dirEntryCount = 0;
     selectedDirEntry = 0;
@@ -42,7 +42,7 @@ bool loadIniListFirstLine(char * fn, char * destbuf)
 }
 void writeIniList(char * fn, char * deleteEntry)
 {
-    s_chdir("/satiator-rings");
+    s_chdir("/satiator-powerrings");
     s_stat_t *st = (s_stat_t*)statbuf;
     int fp = s_stat(fn, st, sizeof(statbuf));
     if (fp >=0)
@@ -101,7 +101,7 @@ bool loadIniList(char * fn, bool sort, char * addItemStr, bool addAtStart, int m
 {
     sci_init();
     bool ret = true;
-    s_chdir("/satiator-rings");
+    s_chdir("/satiator-powerrings");
     truncatedList = false;
     dirEntryCount = 0;
     selectedDirEntry = 0;

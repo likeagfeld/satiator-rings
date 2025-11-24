@@ -114,7 +114,7 @@ void logic_options()
                 {
                     routine_scene = 0;
                     playSfx(SFX_SELECT, false);
-                    s_unlink("/satiator-rings/recent.ini");
+                    s_unlink("/satiator-powerrings/recent.ini");
                     displayStatus("Recent history was cleared");
                 }
                 if(pad_controllers[controllerMonitor].btn_b == BUTTON_STATE_NEWPRESS)

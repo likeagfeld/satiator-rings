@@ -481,8 +481,8 @@ void logic_gamelist()
             applyTheme();
             gameBox.tex = -1;
             createGuiBoxes("GAME.TGA", true);
-            defaultBoxTex = load_sprite_texture_satiator("/satiator-rings/gfx", "SBOX.TGA");
-            strcpy(gameBox.path, "/satiator-rings/themes/");
+            defaultBoxTex = load_sprite_texture_satiator("/satiator-powerrings/gfx", "SBOX.TGA");
+            strcpy(gameBox.path, "/satiator-powerrings/themes/");
             strcat(gameBox.path, loadedThemeName);
             shadowSprite = create_sprite(load_sprite_texture_satiator(gameBox.path, "SHDW.TGA"), 320, 240, 0, 1, 1, 0);
             strcpy(gameBox.path, "");
