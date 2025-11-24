@@ -29,25 +29,25 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /build
 
-# Set up the build workspace first
-WORKDIR /workspace
-
 # Clone and build SH-2 cross compiler (GCC for Sega Saturn)
-# Put it in the location the makefile expects (../../Compiler relative to /workspace/satiator-rings)
-RUN cd /workspace && \
+# The makefile expects ../../Compiler, so put it at /home/user/Compiler
+RUN cd /home/user && \
     git clone https://github.com/johannes-fetz/compiler.git Compiler && \
     cd Compiler && \
     chmod +x INSTALL_PREREQUISITES.sh && \
     chmod +x INSTALL_LINUX.sh
 
 # Clone Jo Engine in the expected location
-RUN cd /workspace && \
+RUN cd /home/user && \
     git clone https://github.com/johannes-fetz/joengine.git jo_engine
 
 # Set environment variables for build
-ENV COMPILER_DIR=/workspace/Compiler
-ENV JO_ENGINE_SRC_DIR=/workspace/jo_engine
+ENV COMPILER_DIR=/home/user/Compiler
+ENV JO_ENGINE_SRC_DIR=/home/user/jo_engine
 ENV PATH="${COMPILER_DIR}/LINUX/bin:${PATH}"
+
+# Project will be mounted at /home/user/satiator-rings by GitHub Actions
+WORKDIR /home/user/satiator-rings
 
 # Copy build helper script
 COPY docker-build.sh /usr/local/bin/build.sh

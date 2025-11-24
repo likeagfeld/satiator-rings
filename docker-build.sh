@@ -16,8 +16,8 @@ if [ ! -d "$COMPILER_DIR/LINUX/bin" ]; then
     ./INSTALL_LINUX.sh
 fi
 
-# Navigate to project directory (the mounted volume will be at /workspace)
-cd /workspace
+# Navigate to project directory (the mounted volume will be at /home/user/satiator-rings)
+cd /home/user/satiator-rings
 
 # Clean previous builds
 echo "Cleaning previous build artifacts..."
