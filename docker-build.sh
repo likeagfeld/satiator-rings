@@ -8,13 +8,13 @@ echo "PowerRings Cloud Build System"
 echo "========================================"
 echo ""
 
-# Check if compiler is installed
+# Compiler should already be installed in the Docker image
 if [ ! -d "$COMPILER_DIR/LINUX/bin" ]; then
-    echo "Installing Sega Saturn compiler toolchain..."
-    echo "This will take 15-20 minutes on first build..."
-    cd $COMPILER_DIR
-    ./INSTALL_LINUX.sh
+    echo "ERROR: Compiler not found at $COMPILER_DIR/LINUX/bin"
+    echo "The Docker image may not have built correctly."
+    exit 1
 fi
+echo "✓ Compiler found at $COMPILER_DIR/LINUX/bin"
 
 # Navigate to project directory (the mounted volume will be at /home/user/satiator-rings)
 cd /home/user/satiator-rings

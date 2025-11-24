@@ -29,13 +29,16 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /build
 
-# Clone and build SH-2 cross compiler (GCC for Sega Saturn)
+# Clone and INSTALL SH-2 cross compiler (GCC for Sega Saturn)
 # The makefile expects ../../Compiler, so put it at /home/user/Compiler
+# This takes a long time but needs to be done during image build
 RUN cd /home/user && \
     git clone https://github.com/johannes-fetz/compiler.git Compiler && \
     cd Compiler && \
     chmod +x INSTALL_PREREQUISITES.sh && \
-    chmod +x INSTALL_LINUX.sh
+    chmod +x INSTALL_LINUX.sh && \
+    ./INSTALL_PREREQUISITES.sh && \
+    ./INSTALL_LINUX.sh
 
 # Clone Jo Engine in the expected location
 RUN cd /home/user && \
