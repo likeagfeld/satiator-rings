@@ -20,7 +20,7 @@ jobs:
     - name: Build PowerRings in Docker
       run: |
         docker build -t powerrings-builder .
-        docker run -v ${{ github.workspace }}:/workspace powerrings-builder /usr/local/bin/build.sh
+        docker run -v ${{ github.workspace }}:/home/user/satiator-rings powerrings-builder /usr/local/bin/build.sh
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
